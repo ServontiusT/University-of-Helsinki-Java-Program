@@ -8,6 +8,15 @@
 * Define a method called printSquare(int size) that prints a suitable square with the help of the printStars method.
 * */
 
+/*
+* Part 3
+* Write a method called printRectangle(int width, int height) that prints the correct rectangle by using the printStars method.
+*/
+
+/*
+* Part 4
+* Create a method called printTriangle(int size) that prints a triangle by using the printStars method.
+*/
 public class StarSign {
 
     public static void main(String[] args) {
@@ -32,21 +41,27 @@ public class StarSign {
         for(int counter = 1; counter <= number; counter++) {
             System.out.print("*");
         }
+        System.out.println();
     }
 
     public static void printSquare(int size) {
         // second part of the exercise
         for(int row = 1; row <= size; row++) {
             printStars(size);
-            System.out.println();
         }
     }
 
     public static void printRectangle(int width, int height) {
         // third part of the exercise
+        for(int column = 1; column <= height; column++) {
+            printStars(width);
+        }
     }
 
     public static void printTriangle(int size) {
         // fourth part of the exercise
+        for(int row = 1; row <= size; row++) {
+            printStars(row);
+        }
     }
 }
