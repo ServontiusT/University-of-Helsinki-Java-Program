@@ -1,3 +1,12 @@
+/*
+* Part one
+* Define a method called printStars that prints the given number of stars and a line break.
+*/
+
+/*
+* Part 2
+* Define a method called printSquare(int size) that prints a suitable square with the help of the printStars method.
+* */
 
 public class StarSign {
 
@@ -20,10 +29,17 @@ public class StarSign {
 
     public static void printStars(int number) {
         // first part of the exercise
+        for(int counter = 1; counter <= number; counter++) {
+            System.out.print("*");
+        }
     }
 
     public static void printSquare(int size) {
         // second part of the exercise
+        for(int row = 1; row <= size; row++) {
+            printStars(size);
+            System.out.println();
+        }
     }
 
     public static void printRectangle(int width, int height) {
