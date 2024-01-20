@@ -7,55 +7,55 @@ import java.util.NoSuchElementException;
 import org.junit.*;
 import static org.junit.Assert.*;
 
-@Points("03-01")
-public class ThirdElementTest {
+@Points("03-02")
+public class SecondPlusThirdTest {
 
     @Rule
     public MockStdio io = new MockStdio();
 
     @Test
     public void test() {
-        String[][] input = {{"Tom", "Emma", "Alex", "Mary", "", "Alex"}, {"Emma", "Alex", "Mary", "", "Mary"}};
+        String[][] input = {{"1", "3", "5", "7", "0", "8"}, {"2", "3", "4", "0", "7"}};
 
         for (int i = 0; i < input.length; i++) {
             check(input[i]);
         }
     }
 
-    private void check(String... strings) {
+    private void check(String... strs) {
         int oldOut = io.getSysOut().length();
 
         String in = "";
-        for (int i = 0; i < strings.length - 1; i++) {
-            in += strings[i] + "\n";
+        for (int i = 0; i < strs.length - 1; i++) {
+            in += strs[i] + "\n";
         }
 
         io.setSysIn(in);
-        callMain(ThirdElement.class);
+        callMain(SecondPlusThird.class);
         String out = io.getSysOut().substring(oldOut);
 
         assertTrue("you're not printing anything!", out.length() > 0);
 
-        String ans = getLastWord(out);
-        String expectedAns = strings[strings.length - 1];
+        String result = getLast(out);
+        String expectedResult = strs[strs.length - 1];
 
-        for (int i = 0; i < strings.length - 1; i++) {
-            String name = strings[i];
-            if (name.equals(expectedAns)) {
+        for (int i = 0; i < strs.length - 1; i++) {
+            String num = strs[i];
+            if (num.equals(expectedResult)) {
                 continue;
             }
 
-            if (name.equals("")) {
+            if (num.equals("")) {
                 continue;
             }
 
-            if (out.contains(name)) {
-                fail("Input:\n" + in + "\n the following output was not expected \"" + name + "\", but it got printed.\nThe output was:\n" + out);
+            if (out.contains(num)) {
+                fail("Input:\n" + in + "\nThe output was not expected to contain \"" + num + "\".\nThe output was:\n" + out);
             }
         }
 
-        String virheIlm = "Input:\n" + in + "\n\n Expected output: \"" + expectedAns + "\", you printed: \"" + ans + "\"\n";
-        assertEquals(virheIlm, expectedAns, ans);
+        String errorMsg = "Input:\n" + in + "\n\n Expected output: \"" + expectedResult + "\", the output was: \"" + result + "\"\n";
+        assertEquals(errorMsg, expectedResult, result);
     }
 
     private void callMain(Class kl) {
@@ -73,8 +73,8 @@ public class ThirdElementTest {
         }
     }
 
-    private static String getLastWord(String inputStr) {
-        String[] parts = inputStr.split("\\s+");
-        return parts[parts.length - 1];
+    private static String getLast(String inputStr) {
+        String[] pieces = inputStr.split("\\s+");
+        return pieces[pieces.length - 1];
     }
 }
