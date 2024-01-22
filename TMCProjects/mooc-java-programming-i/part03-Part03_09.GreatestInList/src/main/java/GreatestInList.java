@@ -1,4 +1,8 @@
-
+/*
+* Continue developing the program so that it finds the greatest number in the list and prints its value
+* after reading all the numbers.
+*
+*/
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -20,5 +24,13 @@ public class GreatestInList {
         System.out.println("");
 
         // implement finding the greatest number in the list here
+        int largestNumber = list.get(0);
+
+        for (int i = 0; i <= list.size() - 1; i++) {
+            if (largestNumber < list.get(i)) {
+                largestNumber = list.get(i);
+            }
+        }
+        System.out.println("The greatest number: " + largestNumber);
     }
 }
