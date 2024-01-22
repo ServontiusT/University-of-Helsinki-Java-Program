@@ -1,4 +1,11 @@
-
+/*
+* The exercise template contains a base that reads numbers from the user and adds them to a list.
+* Reading is stopped once the user enters the number -1.
+* Expand the program to ask for a start and end indices once it has finished asking for numbers.
+* After this the program shall print all the numbers in the list that fall in the specified range
+* (between the indices given by the user, inclusive).
+* You may assume that the user gives indices that match some numbers in the list.
+*/
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -9,13 +16,21 @@ public class OnlyTheseNumbers {
 
         ArrayList<Integer> numbers = new ArrayList<>();
         while (true) {
-            int number = Integer.valueOf(scanner.nextLine());
+            int number = Integer.parseInt(scanner.nextLine());
             if (number == -1) {
                 break;
             }
 
             numbers.add(number);
         }
+        System.out.print("From Where? ");
+        int startNumber = Integer.parseInt(scanner.nextLine());
 
+        System.out.print("To Where? ");
+        int endNumber = Integer.parseInt(scanner.nextLine());
+
+        for (int counter = startNumber; counter <= endNumber; counter++) {
+            System.out.println(numbers.get(counter));
+        }
     }
 }
