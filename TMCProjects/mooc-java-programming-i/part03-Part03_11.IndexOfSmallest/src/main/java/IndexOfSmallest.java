@@ -27,12 +27,16 @@ public class IndexOfSmallest {
 
         // after that, the program prints the smallest number
         // and its index -- the smallest number
-        // might appear multiple times
-
-        System.out.print("Smallest number: ");
-        int smallestNumber = Integer.parseInt(scanner.nextLine());
-
+        // might appear multiple time
+        int smallestNumber = numberList.get(1);
         for (int i = 0; i <= numberList.size() - 1; i++) {
+            if (numberList.get(i) < smallestNumber) {
+                smallestNumber = numberList.get(i);
+            }
+        }
+        System.out.println("Smallest number: " + smallestNumber);
+
+        for (int i = 0; i <= numberList.size() - 1; i++){
             if (smallestNumber == numberList.get(i)) {
                 System.out.println("Found at index: " + i);
             }
