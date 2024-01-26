@@ -1,4 +1,7 @@
-
+/* Create the method public static void removeLast(ArrayList<String> strings) in the exercise template.
+* The method should remove the last value in the list it receives as a parameter.
+* If the list is empty, the method does nothing.
+*/
 import java.util.ArrayList;
 
 public class RemoveLast {
@@ -7,4 +10,11 @@ public class RemoveLast {
         // Try your method in here
     }
 
+    public static void removeLast(ArrayList<String> strings) {
+        if (strings.isEmpty()) {
+            return;
+        }
+
+        strings.remove(strings.size() - 1);
+    }
 }
