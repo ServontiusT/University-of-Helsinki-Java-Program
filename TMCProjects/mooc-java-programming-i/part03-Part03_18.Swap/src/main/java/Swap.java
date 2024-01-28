@@ -1,4 +1,7 @@
-
+/*
+* Modify the program to do following: After the first printing, the program should ask for two indices from the user.
+* The values in these two indices should be swapped, and in the end the values of the array should be printed once again.
+*/
 import java.util.Scanner;
 
 public class Swap {
@@ -22,6 +25,15 @@ public class Swap {
         // Implement here
         // asking for the two indices
         // and then swapping them
+
+        System.out.println("Give two indices to swap:");
+        int firstIndex = Integer.parseInt(scanner.nextLine());
+        int secondIndex = Integer.parseInt(scanner.nextLine());
+        int helperNumber = array[firstIndex];
+
+        array[firstIndex] = array[secondIndex];
+        array[secondIndex] = helperNumber;
+
 
         System.out.println("");
         index = 0;
