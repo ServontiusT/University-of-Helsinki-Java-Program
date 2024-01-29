@@ -1,4 +1,7 @@
-
+/*
+* The class SumOfArray has a method public static int sumOfNumbersInArray(int[] array).
+* Complete the method so that it computes and returns the sum of the numbers in the array it receives as parameter.
+*/
 public class SumOfArray {
 
     public static void main(String[] args) {
@@ -9,6 +12,11 @@ public class SumOfArray {
 
     public static int sumOfNumbersInArray(int[] array) {
         // Write some code here
-        return 0;
+        int sumOfNumbers = 0;
+
+        for (int number: array) {
+            sumOfNumbers += number;
+        }
+        return sumOfNumbers;
     }
 }
