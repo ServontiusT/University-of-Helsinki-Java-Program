@@ -16,7 +16,6 @@ public class LineByLine {
                 break;
             } else {
                 splitString(userString);
-                continue;
             }
         }
     }
