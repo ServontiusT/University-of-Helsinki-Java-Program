@@ -1,4 +1,8 @@
+/*
+Implement the decrement() method in the class body in such a way that it decrements the value variable of the object it's being called on by one.
+Once you're done with the decrement() method, the main program of the previous example should work to produce the example output.
 
+ */
 public class DecreasingCounter {
 
     private int value;  // an object variable for storing the value of the counter
@@ -15,6 +19,15 @@ public class DecreasingCounter {
     public void decrement() {
         // write the method implementation here
         // the aim is to decrement the value of the counter by one
+        if (value == 0) {
+            return;
+        } else {
+            this.value -= 1;
+        }
+    }
+
+    public void reset() {
+        this.value = 0;
     }
 
     // the other methods go here
