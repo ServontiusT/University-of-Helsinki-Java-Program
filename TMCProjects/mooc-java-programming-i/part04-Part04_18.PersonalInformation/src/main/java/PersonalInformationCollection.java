@@ -18,22 +18,18 @@ public class PersonalInformationCollection {
         ArrayList<PersonalInformation> infoCollection = new ArrayList<>();
         Scanner scanner = new Scanner(System.in);
 
-        String firstName;
-        String lastName;
-        String userID;
-
         while(true) {
             System.out.print("");
-            firstName = scanner.nextLine();
+            String firstName = scanner.nextLine();
 
             if (firstName.isEmpty()) {
                 break;
             } else {
                 System.out.print("");
-                lastName = scanner.nextLine();
+                String lastName = scanner.nextLine();
 
                 System.out.print("");
-                userID = scanner.nextLine();
+                String userID = scanner.nextLine();
 
                 PersonalInformation newUser = new PersonalInformation(firstName, lastName, userID);
                 infoCollection.add(newUser);
